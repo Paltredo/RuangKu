@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RuangKu - Sistem Cerdas</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>RuangKu</h1>
+      <div id="clock-container">
+        <span id="current-time-display">00:00</span>
+      </div>
+      <p>Status Ruang Kelas Real-Time</p>
+    </header>
+
+    <main>
+      <section id="list-section">
+        <div class="filter-container">
+          <input
+            type="text"
+            id="searchRoom"
+            placeholder="Cari kelas..."
+            onkeyup="filterRooms()"
+          />
+        </div>
+        <div class="legend">
+          <span class="status-box available"></span> Tersedia
+          <span class="status-box occupied"></span> Dipakai
+        </div>
+        <div id="room-grid" class="room-grid"></div>
+      </section>
+
+      <section id="detail-section" class="hidden">
+        <button class="btn-back" onclick="closeDetail()">← Kembali</button>
+        <div class="detail-card">
+          <h2 id="detail-room-name">Nama Kelas</h2>
+          <div id="detail-status-badge">Status</div>
+          <hr />
+          <h3>Jadwal Aktif:</h3>
+          <ul id="usage-list"></ul>
+
+          <div class="booking-form">
+            <h3>Booking Ruangan Ini</h3>
+            <input type="text" id="booking-user" placeholder="Nama Pengguna" />
+            <input type="text" id="booking-activity" placeholder="Kegiatan" />
+            <div class="time-range">
+              <label>Mulai: <input type="time" id="start-time" /></label>
+              <label>Selesai: <input type="time" id="end-time" /></label>
+            </div>
+            <button class="btn-submit" onclick="submitBooking()">
+              Konfirmasi Booking
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

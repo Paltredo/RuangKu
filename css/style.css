@@ -1,0 +1,427 @@
+:root {
+  --bg-color: #f4f7f6;
+  --primary: #2c3e50;
+  --available: #2ecc71;
+  --occupied: #e74c3c;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  margin: 0;
+  color: var(--primary);
+}
+
+header {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.filter-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#searchRoom {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.legend {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 0.9em;
+}
+
+.status-box {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 15px;
+  border-radius: 3px;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  padding: 0 20px 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.room-card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.room-name {
+  font-weight: bold;
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Status Badge */
+.status-badge {
+  font-size: 0.75em;
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.available {
+  background-color: var(--available);
+}
+.occupied {
+  background-color: var(--occupied);
+}
+
+/* Detail Section */
+.hidden {
+  display: none;
+}
+
+#detail-section {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.btn-back {
+  background: none;
+  border: 1px solid var(--primary);
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.detail-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px dashed #eee;
+}
+
+.booking-form input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.8em;
+  color: #999;
+}
+
+/* ... (Gunakan CSS sebelumnya, tambahkan bagian ini) ... */
+
+.time-range {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.time-range label {
+  flex: 1;
+  font-size: 0.8em;
+  color: #666;
+}
+
+.time-range input {
+  width: 100%;
+  margin-top: 5px;
+}
+
+#current-time-display {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+:root {
+  --bg-color: #f4f7f6;
+  --primary: #2c3e50;
+  --available: #2ecc71;
+  --occupied: #e74c3c;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-color);
+  margin: 0;
+  color: var(--primary);
+}
+header {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+#current-time-display {
+  font-size: 1.5em;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.filter-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+#searchRoom {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+}
+.legend {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.status-box {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 15px;
+  border-radius: 3px;
+}
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.room-card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+.status-badge {
+  font-size: 0.75em;
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+.available {
+  background-color: var(--available);
+}
+.occupied {
+  background-color: var(--occupied);
+}
+.hidden {
+  display: none;
+}
+#detail-section {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.detail-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.btn-back {
+  background: none;
+  border: 1px solid var(--primary);
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.booking-form {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px dashed #eee;
+}
+.booking-form input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.time-range {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+.time-range label {
+  flex: 1;
+  font-size: 0.8em;
+}
+.btn-submit {
+  width: 100%;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+:root {
+  --bg: #f0f2f5;
+  --primary: #1a2a6c;
+  --green: #00b894;
+  --red: #d63031;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  margin: 0;
+  color: #333;
+}
+header {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+#current-time-display {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+.room-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.status-badge {
+  display: block;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.available {
+  background: var(--green);
+}
+.occupied {
+  background: var(--red);
+}
+
+.hidden {
+  display: none;
+}
+.detail-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+.booking-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.time-range {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-back {
+  margin: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: white;
+}
